@@ -9,8 +9,6 @@ const Title = (props) => {
     setNewTitleText(e.target.value);
   };
 
-  console.log(props);
-
   return (
     <div>
       {!props.editing ? (
