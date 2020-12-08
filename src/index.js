@@ -7,10 +7,11 @@ import { Provider } from 'react-redux';
 import Title from './components/Title';
 import DragonList from './components/DragonList';
 import {titleReducer} from './reducers/titleReducer';
+import {dragonReducer} from './reducers/dragonReducer';
 
 import './styles.css';
 
-const store = createStore(titleReducer);
+const store = createStore(dragonReducer);
 
 function App() {
   return (
