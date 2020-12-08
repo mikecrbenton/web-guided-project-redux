@@ -9,6 +9,8 @@ const Title = (props) => {
     setNewTitleText(e.target.value);
   };
 
+  console.log(props);
+
   return (
     <div>
       {!props.editing ? (
@@ -42,10 +44,12 @@ const Title = (props) => {
 };
 
 const mapStateToProps = state => {
-  retn
+  return {
+    newProp: 123
+  }
 }
 
-export default connect()(Title); //function currying
+export default connect(mapStateToProps)(Title); //function currying
 //Inside of Connect
 //1. calling store.getState();
 //2. passing state into mapStateToProps
