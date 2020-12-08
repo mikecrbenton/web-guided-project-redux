@@ -12,6 +12,10 @@ class DragonList extends React.Component {
     this.setState({ newMember: e.target.value });
   };
 
+  handleClick = e => {
+
+  }
+
   render() {
     const { members } = this.props;
 
@@ -31,7 +35,7 @@ class DragonList extends React.Component {
           onChange={this.handleChanges}
           placeholder="Add new member"
         />
-        <button onClick={handleClick}>Add member</button>
+        <button onClick={this.handleClick}>Add member</button>
       </React.Fragment>
     );
   }
