@@ -1,7 +1,8 @@
 export const initialState = {
     members: [
         { name: 'Jojo Zhang', dragonStatus: true },
-        { name: 'Brandon Harris', dragonStatus: false }
+        { name: 'Brandon Harris', dragonStatus: false },
+        { name: 'Warren Longmire', dragonStatus: false },
       ]
 };
 
