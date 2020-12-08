@@ -13,9 +13,9 @@ const Title = (props) => {
 
   return (
     <div>
-      {!props.editing ? (
+      {!props.stateEditing ? (
         <h1>
-          {props.title}{' '}
+          {props.stateTitle}{' '}
           <i
             className="far fa-edit"
             onClick={() => props.toggleEditing()}
@@ -45,8 +45,8 @@ const Title = (props) => {
 
 const mapStateToProps = state => {
   return {
-    title: state.title,
-    editing: state.editing
+    stateTitle: state.title,
+    stateEditing: state.editing
   }
 }
 
