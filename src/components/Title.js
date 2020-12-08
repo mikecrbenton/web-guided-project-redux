@@ -43,8 +43,8 @@ const Title = (props) => {
 
 const mapStateToProps = state => {
   return {
-    title: state.titleReducer.title,
-    editing: state.titleReducer.editing
+    title: state.title.title,
+    editing: state.title.editing
   }
 }
 
