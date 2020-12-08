@@ -13,9 +13,9 @@ const Title = (props) => {
 
   return (
     <div>
-      {!props.stateEditing ? (
+      {!props.editing ? (
         <h1>
-          {props.stateTitle}{' '}
+          {props.title}{' '}
           <i
             className="far fa-edit"
             onClick={() => props.toggleEditing()}
@@ -45,12 +45,12 @@ const Title = (props) => {
 
 const mapStateToProps = state => {
   return {
-    stateTitle: state.title,
-    stateEditing: state.editing
+    title: state.title,
+    editing: state.editing
   }
 }
 
-export default connect(mapStateToProps, { toggleEditing, updateTitle })(Title); //function currying
+export default connect(mapStateToProps, { dispatchedToggleEdit: toggleEditing, dispatchedUpdateTitle: updateTitle })(Title); //function currying
 //Inside of Connect
 //1. calling store.getState();
 //2. Passing state into mapStateToProps
