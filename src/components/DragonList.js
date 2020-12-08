@@ -15,8 +15,6 @@ class DragonList extends React.Component {
   render() {
     const { members } = this.props;
 
-    console.log(this.props);
-    
     return (
       <React.Fragment>
         <div className="friends-list">
@@ -33,7 +31,7 @@ class DragonList extends React.Component {
           onChange={this.handleChanges}
           placeholder="Add new member"
         />
-        <button>Add member</button>
+        <button onClick={handleClick}>Add member</button>
       </React.Fragment>
     );
   }
