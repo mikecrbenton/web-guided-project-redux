@@ -1,21 +1,21 @@
 import React, { useState, useReducer } from 'react';
-
-import { initialState, titleReducer } from '../reducers/titleReducer';
 import { toggleEditing, updateTitle} from './../actions/titleActions';
+import { connect } from  'react-redux';
 
-const Title = () => {
+const Title = (props) => {
   const [newTitleText, setNewTitleText] = useState();
-  const [state, dispatch] = useReducer(titleReducer, initialState);
 
   const handleChanges = e => {
     setNewTitleText(e.target.value);
   };
 
+  console.log(props);
+
   return (
     <div>
-      {!state.editing ? (
+      {!props.editing ? (
         <h1>
-          {state.title}{' '}
+          {props.title}{' '}
           <i
             className="far fa-edit"
             onClick={() => dispatch(toggleEditing())}
@@ -43,4 +43,14 @@ const Title = () => {
   );
 };
 
-export default Title;
+const mapStateToProps = state => {
+  return {
+    title: state.title,
+    editing: state.editing
+  }
+}
+
+export default connect(mapStateToProps)(Title); //function currying
+//Inside of connect
+//1. calling store.getState();
+//2. passing state into mapStateToProps
