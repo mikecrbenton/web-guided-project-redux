@@ -50,8 +50,11 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { toggleEditing:toggleEditing, updateTitle:updateTitle })(Title); //function currying
+export default connect(mapStateToProps, { toggleEditing, updateTitle })(Title); //function currying
 //Inside of Connect
 //1. calling store.getState();
-//2. passing state into mapStateToProps
+//2. Passing state into mapStateToProps
 //3. Taking the object returned form mapStateToProps and connecting it to the component's props.
+//4. Get an object containing actionCreators.
+//5. Add actionCreators to props.
+//6. Automatically call dispatch(actionCreator) when calling props.actionCreator.
