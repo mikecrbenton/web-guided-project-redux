@@ -6,6 +6,6 @@ export const initialState = {
 };
 
 
-export const dragonReducer = (state, action) => {
-    
+export const dragonReducer = (state = initialState, action) => {
+
 }
