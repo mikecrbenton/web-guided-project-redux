@@ -42,13 +42,10 @@ const Title = (props) => {
 };
 
 const mapStateToProps = state => {
-  return {
-    title: state.title,
-    editing: state.editing
-  }
+  retn
 }
 
-export default connect(mapStateToProps)(Title); //function currying
+export default connect()(Title); //function currying
 //Inside of Connect
 //1. calling store.getState();
 //2. passing state into mapStateToProps
