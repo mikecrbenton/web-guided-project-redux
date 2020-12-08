@@ -18,7 +18,7 @@ const Title = (props) => {
           {props.title}{' '}
           <i
             className="far fa-edit"
-            onClick={() => dispatch(toggleEditing())}
+            onClick={() => props.dispatch(toggleEditing())}
           />
         </h1>
       ) : (
@@ -32,7 +32,7 @@ const Title = (props) => {
           />
           <button
             onClick={() =>
-              dispatch(updateTitle(newTitleText))
+              props.dispatch(updateTitle(newTitleText))
             }
           >
             Update title
@@ -51,6 +51,7 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Title); //function currying
-//Inside of connect
+//Inside of Connect
 //1. calling store.getState();
 //2. passing state into mapStateToProps
+//3. Taking the object returned form mapStateToProps and connecting it to the component's props.
