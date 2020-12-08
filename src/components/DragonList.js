@@ -13,7 +13,7 @@ class DragonList extends React.Component {
   };
 
   handleClick = e => {
-
+    this.props.addMember(newMember);
   }
 
   render() {
