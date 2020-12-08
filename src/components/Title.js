@@ -8,7 +8,9 @@ const Title = (props) => {
   const handleChanges = e => {
     setNewTitleText(e.target.value);
   };
-  
+
+  console.log(props);
+
   return (
     <div>
       {!props.editing ? (
