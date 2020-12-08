@@ -33,4 +33,8 @@ class DragonList extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+
+}
+
 export default connect()(DragonList);
