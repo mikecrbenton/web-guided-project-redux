@@ -8,9 +8,7 @@ const Title = (props) => {
   const handleChanges = e => {
     setNewTitleText(e.target.value);
   };
-
-  console.log(props);
-
+  
   return (
     <div>
       {!props.editing ? (
@@ -45,7 +43,8 @@ const Title = (props) => {
 
 const mapStateToProps = state => {
   return {
-    newProp: 123
+    title: state.title,
+    editing: state.editing
   }
 }
 
