@@ -50,7 +50,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { dispatchedToggleEdit: toggleEditing, dispatchedUpdateTitle: updateTitle })(Title); //function currying
+export default connect(mapStateToProps, { toggleEditing, updateTitle })(Title); //function currying
 //Inside of Connect
 //1. calling store.getState();
 //2. Passing state into mapStateToProps
