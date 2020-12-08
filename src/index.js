@@ -10,7 +10,7 @@ import {rootReducer} from './reducers';
 
 import './styles.css';
 
-const store = createStore(dragonReducer);
+const store = createStore(rootReducer);
 
 function App() {
   return (
