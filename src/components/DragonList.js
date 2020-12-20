@@ -1,12 +1,14 @@
 import React from 'react';
+// ACTIONS
+import {addMember} from '../actions/dragonlistActions' 
+// CONNECT
+import {connect} from "react-redux"
+
 
 class DragonList extends React.Component {
+  
   state = {
     newMember: '',
-    members: [
-      { name: 'Jojo Zhang', dragonStatus: true },
-      { name: 'Brandon Harris', dragonStatus: false }
-    ]
   };
 
   handleChanges = e => {
@@ -17,7 +19,7 @@ class DragonList extends React.Component {
     return (
       <React.Fragment>
         <div className="friends-list">
-          {this.state.members.map((member, index) => (
+          {this.props.members.map((member, index) => (
             <h4 key={index}>
               {member.name}
               {member.dragonStatus && <i className="fas fa-dragon" />}
@@ -30,10 +32,18 @@ class DragonList extends React.Component {
           onChange={this.handleChanges}
           placeholder="Add new member"
         />
-        <button>Add member</button>
+        <button onClick={ () => this.props.addMember(this.state.newMember)}>Add member</button>
       </React.Fragment>
     );
   }
 }
 
-export default DragonList;
+const mapStateToProps = (state) => {
+   return {
+     members: state.dragonList.members
+   }
+ }
+ 
+ const mapDispatchToProps = {addMember}
+ 
+ export default connect(mapStateToProps, mapDispatchToProps)(DragonList);
